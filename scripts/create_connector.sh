@@ -1,0 +1,4 @@
+  curl -i -X POST -H "Accept:application/json" \
+    -H "Content-Type:application/json" \
+    localhost:8083/connectors/ \
+    -d '{ "name": "stream-poc-connector", "config": { "schema.registry.url": "http://schema_registry:8081", "connector.class": "io.debezium.connector.mysql.MySqlConnector", "tasks.max": "1", "database.hostname": "mysql", "database.port": "3306", "database.user": "root", "database.password": "123456", "database.server.id": "184054", "database.server.name": "testDB", "database.whitelist": "streams_poc", "database.history.kafka.bootstrap.servers": "broker:9092", "database.history.kafka.topic": "stream_poc", "snapshot.mode": "when_needed" } }'
